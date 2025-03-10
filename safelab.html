@@ -1,18 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeLab</title>
+    <title>CyberScan Lab</title>
+    <!-- Fuentes e iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Variables de color */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+            --bg-color: #f5f6fa;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background: var(--bg-color);
+        }
+
+        /* Menú lateral */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary-color);
+            padding: 20px;
+            color: white;
+            position: fixed;
+        }
+
+        .logo {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: var(--success-color);
+        }
+
+        .menu-item {
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-item:hover {
+            background: var(--secondary-color);
+        }
+
+        .menu-item.active {
+            background: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .menu-item i {
+            margin-right: 12px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        /* Tarjetas de resumen */
+        .summary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Formularios */
+        .upload-section {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .scan-button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Tablas de resultados */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .results-table th, .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Colores de estado */
+        .safe { color: var(--success-color); }
+        .malicious { color: var(--danger-color); }
+        .warning { color: #f1c40f; }
+    </style>
 </head>
-<body class="flex fixed bg-blue-200 bg-blend-color-burn">
+<body>
     <!-- Menú lateral -->
     <div class="sidebar">
-        <div class="logo text-red-100">
-            <i class="fas fa-shield-alt text-red-100"></i> SafeLab
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i> SafeLab
         </div>
         <div class="menu-item active" onclick="showSection('dashboard')">
             <i class="fas fa-home"></i> Dashboard
@@ -27,6 +146,7 @@
             <i class="fas fa-chart-bar"></i> Reportes
         </div>
     </div>
+
     <!-- Contenido principal -->
     <div class="main-content">
         <!-- Sección Dashboard -->
@@ -42,7 +162,7 @@
                     <p class="malicious">23</p>
                 </div>
                 <div class="summary-card">
-                    <h4><i class="fas fa-check-circle>"></i> URLs Limpias</h4>
+                    <h4><i class="fas fa-check-circle"></i> URLs Limpias</h4>
                     <p class="safe">890</p>
                 </div>
                 <div class="summary-card">
@@ -143,4 +263,5 @@
             alert(`Archivo seleccionado: ${e.target.files[0].name}`);
         });
     </script>
+</body>
 </html>
