@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="09f">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeLab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="SafeLab: Tu Escudo Contra las Amenazas Digitales">
+    <title>Dash</title>
+</head>
+
+<body class="bg-gray-100 text-gray-900 transition duration-500" id="body">
+    <div class="flex h-screen">
+        <div class="w-64 bg-blue-500 p-5">
+            <h1 class="block font-semibold mb-6 decoration-neutral-800 text-white">SafeLab</h1>
+            <ul>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Inicio</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Análisis de archivos</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Análisis de URL</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Reportes</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Sobre nosotros</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded text-white">Salir</a></li>
+            </ul>
+        </div>
+        <div class="flex-1 p-8">
+            <h1 class="text-indigo-700 text-center">Bienvenidos a SafeLab</h1>
+            <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore numquam itaque. Voluptatum
+                temporibus dolores error minus facilis recusandae laborum reprehenderit dolore eos, animi, quis
+                quibusdam et odio enim! Eius.</aside>
+        </div>
+    </div>
+    <!-- darkmode -->
+    <button onclick="toggleDarkMode()" class="fixed bottom-5 right-5 p-3 bg-gray-700 text-white rounded-full hover:bg-gray-900 transition">
+        <i class="fas fa-moon"></i> Cambiar modo
+    </button>
+
+    <script>
+        // Funcion darkmode
+        function toggleDarkMode() {
+            var body = document.getElementById('body');
+            body.classList.toggle('bg-gray-100');
+            body.classList.toggle('bg-gray-800');
+            body.classList.toggle('text-gray-900');
+            body.classList.toggle('text-white');
+        }
+    </script>
+</body>
+
+</html>
